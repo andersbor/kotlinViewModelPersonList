@@ -5,21 +5,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class PersonsViewModel : ViewModel() {
-    private var _persons = mutableListOf<Person>()
+    private var _personList = mutableListOf<Person>()
     private var mutableLiveData: MutableLiveData<List<Person>> = MutableLiveData()
     val persons: LiveData<List<Person>> = mutableLiveData
 
     fun add(person: Person) {
-        _persons.add(person)
-        mutableLiveData.value = _persons // notifies observers
+        _personList.add(person)
+        mutableLiveData.value = _personList // notifies observers
     }
 
     operator fun get(position: Int): Person { // [] operator overloading
-        return _persons[position]
+        return _personList[position]
     }
 
     fun remove(position: Int) {
-        _persons.removeAt(position)
-        mutableLiveData.value = _persons
+        _personList.removeAt(position)
+        mutableLiveData.value = _personList
     }
 }

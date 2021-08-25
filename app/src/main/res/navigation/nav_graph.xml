@@ -15,13 +15,13 @@
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_FirstFragment_to_personListFragment"
+            app:destination="@id/personsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="dk.easj.anbo.viewmodelpersonlist.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Persons simple view"
         tools:layout="@layout/fragment_second">
 
         <action
@@ -29,8 +29,8 @@
             app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/personsListFragment"
         android:name="dk.easj.anbo.viewmodelpersonlist.PersonsListFragment"
-        android:label="blank_fragment"
+        android:label="Persons List"
         tools:layout="@layout/persons_list_fragment" />
 </navigation>

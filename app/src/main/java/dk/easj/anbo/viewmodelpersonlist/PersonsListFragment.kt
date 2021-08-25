@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dk.easj.anbo.viewmodelpersonlist.databinding.PersonsListFragmentBinding
 
 class PersonsListFragment : Fragment() {
-
     private var _binding: PersonsListFragmentBinding? = null
     private val viewModel: PersonsViewModel by activityViewModels()
 
@@ -28,10 +27,11 @@ class PersonsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.messageTextView.text = "Person list ..."
 
         viewModel.persons.observe(viewLifecycleOwner, { persons: List<Person> ->
             if (persons.isEmpty()) {
-                binding.messageTextView.text = "No words"
+                binding.messageTextView.text = "No Persons"
             } else {
                 binding.messageTextView.text = ""
                 binding.recyclerView.layoutManager = LinearLayoutManager(activity)
